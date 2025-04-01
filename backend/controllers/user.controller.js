@@ -1,4 +1,5 @@
 import User from "../models/user.model.js";
+import cloudinary from "../lib/cloudinary.js";
 
 export const getSuggestedConnections = async (req, res) => {
   try {
@@ -32,37 +33,45 @@ export const getPublicProfile = async (req, res) => {
 };
 
 export const updateProfile = async (req, res) => {
-  try {
-    const allowedFields = [
-      "name",
-      "username",
-      "headline",
-      "about",
-      "location",
-      "profilePicture",
-      "bannerImg",
-      "skills",
-      "experience",
-      "education",
-    ];
+	try {
+		const allowedFields = [
+			"name",
+			"username",
+			"headline",
+			"about",
+			"location",
+			"profilePicture",
+			"bannerImg",
+			"skills",
+			"experience",
+			"education",
+		];
 
-    const updatedData = {};
+		const updatedData = {};
 
-    for (const field of allowedFields) {
-      if (req.body[field]) {
-        updatedData[field] = req.body[field];
-      }
-    }
+		for (const field of allowedFields) {
+			if (req.body[field]) {
+				updatedData[field] = req.body[field];
+			}
+		}
 
-    const user = await User.findByIdAndUpdate(
-      req.user._id,
-      { $set: updatedData },
-      { new: true }
-    ).select("-password");
+		if (req.body.profilePicture) {
+			const result = await cloudinary.uploader.upload(req.body.profilePicture);
+			updatedData.profilePicture = result.secure_url;
+		}
 
-    res.json(user);
-  } catch (error) {
-    console.error("Error in updateProfile controller:", error);
-    res.status(500).json({ message: "Server error" });
-  }
+		if (req.body.bannerImg) {
+			const result = await cloudinary.uploader.upload(req.body.bannerImg);
+			updatedData.bannerImg = result.secure_url;
+		}
+
+		const user = await User.findByIdAndUpdate(req.user._id, { $set: updatedData }, { new: true }).select(
+			"-password"
+		);
+
+		res.json(user);
+	} catch (error) {
+		console.error("Error in updateProfile controller:", error);
+		res.status(500).json({ message: "Server error" });
+	}
 };
