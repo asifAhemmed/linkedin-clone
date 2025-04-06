@@ -3,7 +3,7 @@ import { Home, UserPlus, Bell } from "lucide-react";
 
 export default function Sidebar({ user }) {
 	return (
-		<div className='bg-secondary rounded-lg shadow'>
+		<div className='bg-secondary text-neutral rounded-lg shadow'>
 			<div className='p-4 text-center'>
 				<div
 					className='h-16 rounded-t-lg bg-cover bg-center'

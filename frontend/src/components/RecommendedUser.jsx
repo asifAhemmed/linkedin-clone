@@ -67,7 +67,7 @@ const RecommendedUser = ({ user }) => {
 				);
 			case "received":
 				return (
-					<div className='flex gap-2 justify-center'>
+					<div className='flex  gap-2 justify-center text-neutral'>
 						<button
 							onClick={() => acceptRequest(connectionStatus.data.requestId)}
 							className={`rounded-full p-1 flex items-center justify-center bg-green-500 hover:bg-green-600 text-white`}

@@ -47,7 +47,7 @@ const ExperienceSection = ({ userData, isOwnProfile, onSave }) => {
 	};
 
 	return (
-		<div className='bg-white shadow rounded-lg p-6 mb-6'>
+		<div className='bg-white text-neutral shadow rounded-lg p-6 mb-6'>
 			<h2 className='text-xl font-semibold mb-4'>Experience</h2>
 			{experiences.map((exp) => (
 				<div key={exp._id} className='mb-4 flex justify-between items-start'>

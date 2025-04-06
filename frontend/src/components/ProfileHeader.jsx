@@ -79,7 +79,7 @@ const ProfileHeader = ({ userData, onSave, isOwnProfile }) => {
 		switch (getConnectionStatus) {
 			case "connected":
 				return (
-					<div className='flex gap-2 justify-center'>
+					<div className='flex gap-2 justify-center text-neutral'>
 						<div className={`${baseClass} bg-green-500 hover:bg-green-600`}>
 							<UserCheck size={20} className='mr-2' />
 							Connected

@@ -1,4 +1,68 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@plugin "daisyui" {
+  themes: light --default;
+}
 
+.bg-secondary {
+  background-color: #ffffff; /* White */
+}
+.bg-primary {
+  background-color: #0a66c2; /* LinkedIn Blue */
+}
+.bg-accent {
+  background-color: #7fc15e; /* LinkedIn Green */
+}
+.bg-neutral {
+  background-color: #000000; /* Black */
+}
+.bg-base-100 {
+  background-color: #f3f2ef; /* Light Gray */
+}
+.bg-info {
+  background-color: #5e5e5e; /* Dark Gray */
+}
+.bg-success {
+  background-color: #057642; /* Dark Green */
+}
+.bg-warning {
+  background-color: #f5c75d; /* Yellow */
+}
+.bg-error {
+  background-color: #cc1016; /* Red */
+}
+.bg-link {
+  background-color: #0a66c2; /* LinkedIn Blue */
+}
+
+.text-primary {
+  color: #0a66c2; /* LinkedIn Blue */
+}
+.text-secondary {
+  color: #ffffff; /* White */
+}
+.text-accent {
+  color: #7fc15e; /* LinkedIn Green */
+}
+.text-neutral {
+  color: #000000; /* Black */
+}
+.text-base {
+  color: #f3f2ef; /* Light Gray */
+}
+.text-info {
+  color: #5e5e5e; /* Dark Gray */
+}
+.text-success {
+  color: #057642; /* Dark Green */
+}
+.text-warning {
+  color: #f5c75d; /* Yellow */
+}
+.text-error {
+  color: #cc1016; /* Red */
+}
+.text-link {
+  color: #0a66c2; /* LinkedIn Blue */
+}

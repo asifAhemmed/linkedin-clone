@@ -65,7 +65,7 @@ const PostCreation = ({ user }) => {
 	};
 
 	return (
-		<div className='bg-secondary rounded-lg shadow mb-4 p-4'>
+		<div className='bg-secondary text-neutral rounded-lg shadow mb-4 p-4'>
 			<div className='flex space-x-3'>
 				<img src={user.profilePicture || "/avatar.png"} alt={user.name} className='size-12 rounded-full' />
 				<textarea
