@@ -8,6 +8,7 @@ import { axiosInstance } from "./lib/axios";
 import HomePage from "./pages/HomePage";
 import NotificationsPage from "./pages/NotificationsPage";
 import NetworkPage from "./pages/NetworkPage";
+import PostPage from "./pages/PostPage";
 
 const App = () => {
   const { data: authUser, isLoading } = useQuery({
@@ -44,6 +45,7 @@ const App = () => {
         />
         <Route path='/notifications' element={authUser ? <NotificationsPage /> : <Navigate to={"/login"} />} />
         <Route path='/network' element={authUser ? <NetworkPage /> : <Navigate to={"/login"} />} />
+        <Route path='/post/:postId' element={authUser ? <PostPage /> : <Navigate to={"/login"} />} />
       </Routes>
       <Toaster />
     </Layout>
