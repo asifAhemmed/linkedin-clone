@@ -1,5 +1,4 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Layout from "./components/layout/layout";
 import SignUpPage from "./pages/auth/SignUpPage";
 import LoginPage from "./pages/auth/LoginPage";
 import toast, { Toaster } from "react-hot-toast";
@@ -10,6 +9,7 @@ import NotificationsPage from "./pages/NotificationsPage";
 import NetworkPage from "./pages/NetworkPage";
 import PostPage from "./pages/PostPage";
 import ProfilePage from "./pages/ProfilePage";
+import Layout from './components/layout/Layout';
 
 const App = () => {
   const { data: authUser, isLoading } = useQuery({
